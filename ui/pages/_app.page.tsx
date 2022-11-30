@@ -1,7 +1,9 @@
 
 import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
 import '../styles/globals.css'
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef} from "react";
 import './reactCOIServiceWorker';
 import ZkappWorkerClient from './zkappWorkerClient';
 
@@ -25,16 +27,14 @@ export default function App() {
     zkappPublicKey: null as null | PublicKey,
     creatingTransaction: false,
   });
-
+	  
   // -------------------------------------------------------
   // Do Setup
-
-  useEffect(() => {
-    (async () => {
+  const connectWallet = async () => {
       if (!state.hasBeenSetup) {
         const zkappWorkerClient = new ZkappWorkerClient();
-
-        console.log('5Loading SnarkyJS...');
+        
+        console.log('Loading SnarkyJS...');
         await zkappWorkerClient.loadSnarkyJS();
         console.log('done');
 
@@ -47,7 +47,7 @@ export default function App() {
           return;
         }
 
-        const publicKeyBase58: string = (await mina.requestAccounts())[0];
+        const publicKeyBase58 : string = (await mina.requestAccounts())[0];
         const publicKey = PublicKey.fromBase58(publicKeyBase58);
 
         console.log('using key', publicKey.toBase58());
@@ -71,19 +71,19 @@ export default function App() {
         const currentNum = await zkappWorkerClient.getNum();
         console.log('current state:', currentNum.toString());
 
-        setState({
-          ...state,
-          zkappWorkerClient,
-          hasWallet: true,
-          hasBeenSetup: true,
-          publicKey,
-          zkappPublicKey,
-          accountExists,
-          currentNum
+        setState({ 
+            ...state, 
+            zkappWorkerClient, 
+            hasWallet: true,
+            hasBeenSetup: true, 
+            publicKey, 
+            zkappPublicKey, 
+            accountExists, 
+            currentNum
         });
       }
-    })();
-  }, []);
+  };
+
 
   // -------------------------------------------------------
   // Wait for account to exist, if it didn't
@@ -91,7 +91,7 @@ export default function App() {
   useEffect(() => {
     (async () => {
       if (state.hasBeenSetup && !state.accountExists) {
-        for (; ;) {
+        for (;;) {
           console.log('checking if account exists...');
           const res = await state.zkappWorkerClient!.fetchAccount({ publicKey: state.publicKey! })
           const accountExists = res.error == null;
@@ -157,11 +157,11 @@ export default function App() {
   if (state.hasWallet != null && !state.hasWallet) {
     const auroLink = 'https://www.aurowallet.com/';
     const auroLinkElem = <a href={auroLink} target="_blank" rel="noreferrer"> [Link] </a>
-    hasWallet = <div> Could not find a wallet. Install Auro wallet here: {auroLinkElem}</div>
+    hasWallet = <div> Could not find a wallet. Install Auro wallet here: { auroLinkElem }</div> 
   }
 
-  let setupText = state.hasBeenSetup ? 'SnarkyJS Ready' : 'Setting up SnarkyJS...';
-  let setup = <div> {setupText} {hasWallet}</div>
+  let setupText = state.hasBeenSetup ? 'SnarkyJS Ready' : 'Loading...';
+  let setup = <div id="setup" style={{display: 'none'}}> { setupText } { hasWallet }</div>
 
   let accountDoesNotExist;
   if (state.hasBeenSetup && !state.accountExists) {
@@ -172,21 +172,66 @@ export default function App() {
     </div>
   }
 
+  const hideconnect = () => {
+	const connct = document.getElementById("connectbtn")!
+	connct.style.display = "none";
+	console.log(connct);
+	};
+	
   let mainContent;
-  if (state.hasBeenSetup && state.accountExists) {
+  if (state.hasBeenSetup && state.accountExists) {	
     mainContent = <div>
       <button onClick={onSendTransaction} disabled={state.creatingTransaction}> Send Transaction </button>
-      <div> Current Number in zkApp: {state.currentNum!.toString()} </div>
+      <div> Current Number in zkApp: { state.currentNum!.toString() } </div>
       <button onClick={onRefreshCurrentNum}> Get Latest State </button>
     </div>
+	hideconnect();
   }
+  
+  let nextContent;
+    const auroLink = 'https://www.aurowallet.com/';
+    const auroLinkElem = <a href={auroLink} target="_blank" rel="noreferrer"> [Link] </a>
+    nextContent = <div id="text1" style={{display: 'none'}}> Could not find a wallet. Install Auro wallet here: { auroLinkElem }</div> 
+		
+  const handleClick = () => {
+    const el = document.getElementById("setup")!
+	el.style.display = "block";
+    console.log(el);
+	
+  };
+	
+  return (
+	<div className={styles.container}>	
+	  <Head>
+        <title>zkApp [mbukhori]</title>
+        <meta name="description" content="ZkApp By mbukhori" />
+        <link type="image/png" crossOrigin="anonymous" sizes="32x32" rel="icon" href="https://raw.githubusercontent.com/mbukhori/04-zkapp-browser-ui/gh-pages/favicon.ico" />
+	  </Head>
+	  
+		<main className={styles.main}>
+		
+	  
+		{setup}
+		{ accountDoesNotExist }
+		{ mainContent }
+		<button id="connectbtn" style={{display: 'block'}} onClick={() => { handleClick(); connectWallet();}}>Connect Wallet</button>
+		
 
-  return <div>
-
-		<Head>
-		<title>Muhammad Bukhori [zkApp]</title>
-        <link rel="icon" href="/04-zkapp-browser-ui/ui/pages/favicon.ico" />
-		</Head>
-    {mainContent}
-  </div>
+		</main>
+		
+	  <footer className={styles.footer}>
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{' '}
+          <span className={styles.logo}>
+            <Image crossOrigin="anonymous" src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span>
+        </a>
+      </footer>
+	</div>
+	
+  );
 }
