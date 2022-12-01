@@ -21,13 +21,12 @@ a {
   body {
 	background-image: url(/04-zkapp-browser-ui/_next/static/media/bg.c7688b63.png);
 	font-family:Comic sans MS;
-	background-size: 100% 100%;
 	font-size: 27px;
-    color: black;
-	width: auto;
-	height: auto;
-	top: 0;
-	left: 0;
+    background-size: cover;
+    width:100%;
+    height:100%;
+    margin:0;
+	position:relative;
 	
 	
   }
@@ -198,8 +197,8 @@ a {
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 320px;
-	top: 400px;
+	left: 380px;
+	top: 450px;
 }
 
 .Home_connectBtn__q4_OB:active {
@@ -210,8 +209,8 @@ a {
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 320px;
-	top: 400px;
+	left: 380px;
+	top: 450px;
 }
 
 .Home_loadingBtn__vAScy {
@@ -222,8 +221,8 @@ a {
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 320px;
-	top: 400px;
+	left: 380px;
+	top: 450px;
 }
 
 .Home_sendBtn__F6hw6 {
