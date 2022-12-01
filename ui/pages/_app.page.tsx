@@ -203,11 +203,10 @@ export default function App() {
 			</a>
 			
 			<a id="getBtn" style={{display: 'block'}} onClick={() => {onRefreshCurrentNum(); }}>
-					<span className={styles.getBtn}> </span>
+					<span className={styles.getBtn}></span>
 			</a>
-      <button onClick={onSendTransaction} disabled={state.creatingTransaction}> Send Transaction </button>
-      <div> Current Number in zkApp: { state.currentNum!.toString() } </div>
-      <button onClick={onRefreshCurrentNum}> Get Latest State </button>
+			<div className={styles.txtState}>Number in ZkApp</div>
+			<div className={styles.numState}>{ state.currentNum!.toString() } </div>
     </div>
 	hideloadingBtn();
   }
@@ -238,9 +237,7 @@ export default function App() {
         <meta name="description" content="ZkApp By mbukhori" />
         <link rel="icon" type="image/x-icon" href="" />
 	  </Head>
-	  
 		<main className={styles.main}>
-		
 			<div id="homepageImg" className={styles.homepage}>
 				<span className={styles.homepageImg}> </span>
 				<a id="connectBtn" style={{display: 'block'}} onClick={() => {connectBtnclick(); connectWallet();}}>
@@ -250,12 +247,11 @@ export default function App() {
 				<a id="loadingBtn" style={{display: 'none'}} onClick={() => {}}>
 					<span className={styles.loadingBtn}> </span>
 				</a>
-				
+					
 				{mainContent}
 			</div>
-		
 		</main>
-		
+
 	  <footer className={styles.footer}>
           Powered by{' '}
           <span className={styles.logo}>

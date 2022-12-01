@@ -20,14 +20,12 @@
   padding: 2rem 0;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
+
 
 .title a {
   color: #0070f3;
@@ -119,21 +117,29 @@
 
 .homepage {
 	display: block;
-	position: relative;
-	width: 1000px;
-	height: 800px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;	
+	width: 900px;
+	height: 600px;
 }
 
 .homepageImg {
 	display: block;
+	display: flex;
+	background-size: cover;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
 	background-image: url("../images/homepageImg.png");
 	background-repeat: no-repeat;
 	position: absolute;
-	top: 100px;
-	right: 200px;
 	width: 600px;
 	height: 500px;
-
 }
 
 .connectBtn {
@@ -141,11 +147,11 @@
 	background-image: url("../images/connectBtn1.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 445px;
-	top: 470px;
+	left: 380px;
+	top: 450px;
 }
 
 .connectBtn:hover {
@@ -153,11 +159,11 @@
 	background-image: url("../images/connectBtn2.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 46%;
-	top: 60%;
+	left: 320px;
+	top: 400px;
 }
 
 .connectBtn:active {
@@ -165,11 +171,11 @@
 	background-image: url("../images/connectBtn3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 46%;
-	top: 60%;
+	left: 320px;
+	top: 400px;
 }
 
 .loadingBtn {
@@ -177,11 +183,11 @@
 	background-image: url("../images/loadingBtn.gif");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 46%;
-	top: 60%;
+	left: 320px;
+	top: 400px;
 }
 
 .sendBtn {
@@ -189,11 +195,11 @@
 	background-image: url("../images/sendBtn1.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 36%;
-	top: 60%;
+	left: 200px;
+	top: 400px;
 }
 
 .sendBtn:hover {
@@ -201,11 +207,11 @@
 	background-image: url("../images/sendBtn2.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 36%;
-	top: 60%;
+	left: 200px;
+	top: 400px;
 }
 
 .sendBtn:active {
@@ -213,11 +219,11 @@
 	background-image: url("../images/sendBtn3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 36%;
-	top: 60%;
+	left: 200px;
+	top: 400px;
 }
 
 .getBtn {
@@ -225,11 +231,11 @@
 	background-image: url("../images/getBtn1.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 56%;
-	top: 60%;
+	left: 450px;
+	top: 400px;
 }
 
 .getBtn:hover {
@@ -237,11 +243,11 @@
 	background-image: url("../images/getBtn2.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 56%;
-	top: 60%;
+	left: 450px;
+	top: 400px;
 }
 
 .getBtn:active {
@@ -249,12 +255,35 @@
 	background-image: url("../images/getBtn3.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 56%;
-	top: 60%;
+	left: 450px;
+	top: 400px;
 }
+
+.txtState {
+	display: block;
+	position: absolute;
+	left: 540px;
+	top: 100px;
+	color: white;
+	font-size: 13px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+.numState {
+	display: block;
+	position: absolute;
+	left: 550px;
+	top: 110px;
+	color: white;
+	font-size: 40px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
 
 @media (max-width: 600px) {
   .grid {

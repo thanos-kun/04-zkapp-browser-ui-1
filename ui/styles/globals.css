@@ -14,19 +14,23 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark ) {
   html {
     color-scheme: dark;
   }
   body {
 	background-image: url("../images/bg.png");
 	font-family:Comic sans MS;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 	font-size: 27px;
     color: black;
-	position: relative; 
-	background-size: cover;
-	height: auto;
 	width: auto;
+	height: auto;
+	top: 0;
+	left: 0;
+	
+	
   }
 }
 
