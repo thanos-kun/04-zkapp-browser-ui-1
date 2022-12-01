@@ -38,12 +38,13 @@ a {
 
 .Home_main__nLjiQ {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
   flex: 1 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .Home_footer____T7K {
@@ -151,20 +152,20 @@ a {
 
 .Home_homepage__o_ei3 {
 	display: block;
-	width: auto;
-	height: auto;
+	position: relative;
+	width: 1000px;
+	height: 800px;
 }
 
 .Home_homepageImg__fcRDd {
 	display: block;
 	background-image: url(/04-zkapp-browser-ui/_next/static/media/homepageImg.423e3856.png);
-	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
-	max-width: 590px;
-	max-height: 480px;
-	width: 590px;
-	height: 480px;
+	position: absolute;
+	top: 100px;
+	right: 200px;
+	width: 600px;
+	height: 500px;
 
 }
 
@@ -176,8 +177,8 @@ a {
 	width: 110px;
 	height: 50px;
 	position: absolute;
-	left: 46%;
-	top: 60%;
+	left: 445px;
+	top: 470px;
 }
 
 .Home_connectBtn__q4_OB:hover {
