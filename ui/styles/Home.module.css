@@ -5,12 +5,13 @@
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .footer {
@@ -116,37 +117,23 @@
 
 }
 
-.btn {
-	display: block;
-	background-image: url("../images/icon.png");
-	background-size: cover;
-    width: 100px;
-    height: 100px;
-}
-
-.btn:hover {
-	background-image: url("../images/favicon.png");
-	}
-
 .homepage {
 	display: block;
-	background-image: url("../images/bg.jpg");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed; 
-	background-size: cover;
-	width: 500px;
-	height: 610px;
+	position: relative;
+	width: 1000px;
+	height: 800px;
 }
 
 .homepageImg {
 	display: block;
 	background-image: url("../images/homepageImg.png");
-	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: 100%;
-	width: 594px;
-	height: 480px;
+	position: absolute;
+	top: 100px;
+	right: 200px;
+	width: 600px;
+	height: 500px;
+
 }
 
 .connectBtn {
@@ -157,8 +144,8 @@
 	width: 110px;
 	height: 50px;
 	position: absolute;
-	left: 46%;
-	top: 60%;
+	left: 445px;
+	top: 470px;
 }
 
 .connectBtn:hover {

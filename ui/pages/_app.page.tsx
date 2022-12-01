@@ -241,7 +241,7 @@ export default function App() {
 	  
 		<main className={styles.main}>
 		
-			<div id="homepageImg" >
+			<div id="homepageImg" className={styles.homepage}>
 				<span className={styles.homepageImg}> </span>
 				<a id="connectBtn" style={{display: 'block'}} onClick={() => {connectBtnclick(); connectWallet();}}>
 					<span className={styles.connectBtn}> </span>
@@ -252,8 +252,6 @@ export default function App() {
 				</a>
 				
 				{mainContent}
-				
-				
 			</div>
 		
 		</main>
