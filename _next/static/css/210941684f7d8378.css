@@ -14,7 +14,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark ) {
   html {
     color-scheme: dark;
   }
@@ -22,11 +22,13 @@ a {
 	background-image: url(/04-zkapp-browser-ui/_next/static/media/bg.09c870d5.png);
 	font-family:Comic sans MS;
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
 	font-size: 27px;
     color: black;
-	width: 100vw;
-	height: 100vh;
+	width: auto;
+	height: auto;
+	top: 0;
+	left: 0;
 	
 	
   }
@@ -55,6 +57,9 @@ a {
   padding: 2rem 0;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
 
@@ -190,11 +195,11 @@ a {
 	background-image: url(/04-zkapp-browser-ui/_next/static/media/connectBtn2.f4587791.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 46%;
-	top: 60%;
+	left: 320px;
+	top: 400px;
 }
 
 .Home_connectBtn__q4_OB:active {
@@ -202,11 +207,11 @@ a {
 	background-image: url(/04-zkapp-browser-ui/_next/static/media/connectBtn3.4f145165.png);
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 46%;
-	top: 60%;
+	left: 320px;
+	top: 400px;
 }
 
 .Home_loadingBtn__vAScy {
@@ -214,11 +219,11 @@ a {
 	background-image: url(/04-zkapp-browser-ui/_next/static/media/loadingBtn.7e7af154.gif);
 	background-repeat: no-repeat;
 	background-size: cover;
-	width: 110px;
-	height: 50px;
+	width: 160px;
+	height: 73px;
 	position: absolute;
-	left: 46%;
-	top: 60%;
+	left: 320px;
+	top: 400px;
 }
 
 .Home_sendBtn__F6hw6 {
