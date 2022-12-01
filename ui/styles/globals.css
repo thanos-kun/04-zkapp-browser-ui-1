@@ -21,7 +21,6 @@ a {
   body {
 	background-image: url("../images/bg.png");
 	font-family:Comic sans MS;
-	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	font-size: 27px;
     color: black;
