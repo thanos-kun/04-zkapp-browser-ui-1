@@ -27,7 +27,100 @@ export default function App() {
     zkappPublicKey: null as null | PublicKey,
     creatingTransaction: false,
   });
-	  
+
+// --------------------------------------------------------
+// Status
+
+  const status1 = () => {
+    const el = document.getElementById("status1")!
+	el.style.display = "block";
+	const el2 = document.getElementById("status2")!
+	el2.style.display = "none";
+	const el3 = document.getElementById("status3")!
+	el3.style.display = "none";
+	const el4 = document.getElementById("status4")!
+	el4.style.display = "none";
+	const el5 = document.getElementById("status5")!
+	el5.style.display = "none";
+	const el6 = document.getElementById("status6")!
+	el6.style.display = "none";
+  }
+  
+   const status2 = () => {
+    const el = document.getElementById("status1")!
+	el.style.display = "none";
+	const el2 = document.getElementById("status2")!
+	el2.style.display = "block";
+	const el3 = document.getElementById("status3")!
+	el3.style.display = "none";
+	const el4 = document.getElementById("status4")!
+	el4.style.display = "none";
+	const el5 = document.getElementById("status5")!
+	el5.style.display = "none";
+	const el6 = document.getElementById("status6")!
+	el6.style.display = "none";
+  }
+  
+   const status3 = () => {
+    const el = document.getElementById("status1")!
+	el.style.display = "none";
+	const el2 = document.getElementById("status2")!
+	el2.style.display = "none";
+	const el3 = document.getElementById("status3")!
+	el3.style.display = "block";
+	const el4 = document.getElementById("status4")!
+	el4.style.display = "none";
+	const el5 = document.getElementById("status5")!
+	el5.style.display = "none";
+	const el6 = document.getElementById("status6")!
+	el6.style.display = "none";
+  }
+  
+   const status4 = () => {
+    const el = document.getElementById("status1")!
+	el.style.display = "none";
+	const el2 = document.getElementById("status2")!
+	el2.style.display = "none";
+	const el3 = document.getElementById("status3")!
+	el3.style.display = "none";
+	const el4 = document.getElementById("status4")!
+	el4.style.display = "block";
+	const el5 = document.getElementById("status5")!
+	el5.style.display = "none";
+	const el6 = document.getElementById("status6")!
+	el6.style.display = "none";
+  }
+  
+   const status5 = () => {
+    const el = document.getElementById("status1")!
+	el.style.display = "none";
+	const el2 = document.getElementById("status2")!
+	el2.style.display = "none";
+	const el3 = document.getElementById("status3")!
+	el3.style.display = "none";
+	const el4 = document.getElementById("status4")!
+	el4.style.display = "none";
+	const el5 = document.getElementById("status5")!
+	el5.style.display = "block";
+	const el6 = document.getElementById("status6")!
+	el6.style.display = "none";
+  }
+  
+   const status6 = () => {
+    const el = document.getElementById("status1")!
+	el.style.display = "none";
+	const el2 = document.getElementById("status2")!
+	el2.style.display = "none";
+	const el3 = document.getElementById("status3")!
+	el3.style.display = "none";
+	const el4 = document.getElementById("status4")!
+	el4.style.display = "none";
+	const el5 = document.getElementById("status5")!
+	el5.style.display = "none";
+	const el6 = document.getElementById("status6")!
+	el6.style.display = "block";
+  }
+	
   // -------------------------------------------------------
   // Do Setup
   const connectWallet = async () => {
@@ -35,16 +128,20 @@ export default function App() {
         const zkappWorkerClient = new ZkappWorkerClient();
         
         console.log('Loading SnarkyJS...');
+		status1();
         await zkappWorkerClient.loadSnarkyJS();
         console.log('done');
 
         await zkappWorkerClient.setActiveInstanceToBerkeley();
 
         const mina = (window as any).mina;
+		status2();
 
         if (mina == null) {
           setState({ ...state, hasWallet: false });
+		  status4();
           return;
+		  
         }
 
         const publicKeyBase58 : string = (await mina.requestAccounts())[0];
@@ -59,6 +156,7 @@ export default function App() {
         await zkappWorkerClient.loadContract();
 
         console.log('compiling zkApp');
+		status3();
         await zkappWorkerClient.compileContract();
         console.log('zkApp compiled');
 
@@ -150,6 +248,8 @@ export default function App() {
     setState({ ...state, currentNum });
   }
 
+	const faucetLink = "https://faucet.minaprotocol.com/?address=" + state.publicKey!.toBase58();
+  
   // -------------------------------------------------------
   // Create UI elements
 
@@ -161,23 +261,10 @@ export default function App() {
   }
 
   let setupText = state.hasBeenSetup ? 'SnarkyJS Ready' : 'Loading...';
-  let setup = <div id="setup" style={{display: 'none'}}> { setupText } { hasWallet }</div>
+  let setup = <div id="setup" style={{display: 'block'}}> { setupText } { hasWallet }</div>
 
-  let accountDoesNotExist;
-  if (state.hasBeenSetup && !state.accountExists) {
-    const faucetLink = "https://faucet.minaprotocol.com/?address=" + state.publicKey!.toBase58();
-    accountDoesNotExist = <div>
-      Account does not exist. Please visit the faucet to fund this account
-      <a href={faucetLink} target="_blank" rel="noreferrer"> [Link] </a>
-    </div>
-  }
 
-  const hideconnect = () => {
-	const connct = document.getElementById("connectbtn")!
-	connct.style.display = "none";
-	console.log(connct);
-	};
-	
+  
   // -------------------------------------------------------
   // Newwwwww
   const connectBtnclick = () => {
@@ -186,13 +273,57 @@ export default function App() {
 	
 	const el2 = document.getElementById("connectBtn")!
 	el2.style.display = "none";
+	
+	const el3 = document.getElementById("loading")!
+	el3.style.display = "block";
   };
   
   const hideloadingBtn = () => {
     const el = document.getElementById("loadingBtn")!
 	el.style.display = "none";
   };
+  
+  const closeBtnclick = () => {
+    const el = document.getElementById("getscreen")!
+	el.style.display = "none";
+	
+	const el2 = document.getElementById("getBtnDisable")!
+	el2.style.display = "none";
+	
+	const el3 = document.getElementById("getBtn")!
+	el3.style.display = "block";
+  };
+  
+  const getscreenShow = () => {
+	const el3 = document.getElementById("getBtn")!
+	el3.style.display = "none";
+	
+    const el = document.getElementById("getscreen")!
+	el.style.display = "block";
+	
+	const el2 = document.getElementById("getBtnDisable")!
+	el2.style.display = "block";
+  };
+  
+  const noAccount = () => {
+    const el = document.getElementById("loadingBtn")!
+	el.style.display = "none";
+    const el2 = document.getElementById("caution")!
+	el2.style.display = "block";
+    const el3 = document.getElementById("ftxt")!
+	el3.style.display = "block";
+    const el4 = document.getElementById("flink")!
+	el4.style.display = "block";
+    const el5 = document.getElementById("loading")!
+	el5.style.display = "none";
+  }
   // -------------------------------------------------------
+ 
+  let accountDoesNotExist;
+  if (state.hasBeenSetup && !state.accountExists) {
+	status5();
+	noAccount();
+  }
   
   let mainContent;
   if (state.hasBeenSetup && state.accountExists) {	
@@ -202,33 +333,31 @@ export default function App() {
 					<span className={styles.sendBtn}> </span>
 			</a>
 			
-			<a id="getBtn" style={{display: 'block'}} onClick={() => {onRefreshCurrentNum(); }}>
+			<a id="getBtn" style={{display: 'block'}} onClick={() => {onRefreshCurrentNum(); getscreenShow(); }}>
 					<span className={styles.getBtn}></span>
 			</a>
-			<div className={styles.txtState}>Number in ZkApp</div>
-			<div className={styles.numState}>{ state.currentNum!.toString() } </div>
-    </div>
+			
+			<span id="getBtnDisable" style={{display: 'none'}} className={styles.getBtnDisable}></span>
+			
+			<h1 className={styles.txtAddrs}>{  state.publicKey!.toBase58() } </h1>
+			<h1 className={styles.addrs}>Address :</h1>
+			
+			<div id="getscreen" style={{display: 'none'}} className={styles.getscreen}>
+				<span className={styles.screenBlack}> </span>
+				<span className={styles.getscreenImg}> </span>
+				
+				<a id="closeBtn" style={{display: 'block'}} onClick={() => {closeBtnclick(); }}>
+					<span className={styles.closeBtn}> </span>
+				</a>
+				
+				<h1 className={styles.txtState}>Current Number in ZkApp :</h1>
+				<h1 className={styles.numState}>{ state.currentNum!.toString() } </h1>
+			</div>
+
+		</div>
 	hideloadingBtn();
+	status6();
   }
-  
-  let nextContent;
-    const auroLink = 'https://www.aurowallet.com/';
-    const auroLinkElem = <a href={auroLink} target="_blank" rel="noreferrer"> [Link] </a>
-    nextContent = <div id="text1" style={{display: 'none'}}> Could not find a wallet. Install Auro wallet here: { auroLinkElem }</div> 
-		
-  const handleClick = () => {
-    const el = document.getElementById("homepage")!
-	el.style.display = "none";
-	const el2 = document.getElementById("loading")!
-	el2.style.display = "block";
-	
-  };
-   
-  const loadingClick = () => {
-    const el = document.getElementById("loading")!
-	el.style.display = "none";
-	
-  };
 	
   return (
 	<div className={styles.container}>	
@@ -237,19 +366,36 @@ export default function App() {
         <meta name="description" content="ZkApp By mbukhori" />
         <link rel="icon" type="image/x-icon" href="" />
 	  </Head>
+	  
 		<main className={styles.main}>
-			<div id="homepageImg" className={styles.homepage}>
+		
+			<div id="homepage" className={styles.homepage}>
 				<span className={styles.homepageImg}> </span>
 				<a id="connectBtn" style={{display: 'block'}} onClick={() => {connectBtnclick(); connectWallet();}}>
 					<span className={styles.connectBtn}> </span>
 				</a>
-
-				<a id="loadingBtn" style={{display: 'none'}} onClick={() => {}}>
-					<span className={styles.loadingBtn}> </span>
-				</a>
+				
+					<span id="loadingBtn" style={{display: 'none'}} className={styles.loadingBtn}> </span>
+					<span id="loading" style={{display: 'none'}} className={styles.loading}> </span>
 					
+					<h1 id="status1" style={{display: 'none'}} className={styles.statusTxt}>Status : Sync & Checking Wallet ...</h1>
+					<h1 id="status2" style={{display: 'none'}} className={styles.statusTxt}>Status : Sync DONE! Login to Wallet...</h1>
+					<h1 id="status3" style={{display: 'none'}} className={styles.statusTxt}>Status : Checking & Validasi Address...</h1>
+					<h1 id="status4" style={{display: 'none'}} className={styles.statusTxt}>Status : Wallet Extension Not Found!</h1>
+					<h1 id="status5" style={{display: 'none'}} className={styles.statusTxt}>Status : Account Address Not Valid or No Balance!</h1>
+					<h1 id="status6" style={{display: 'none'}} className={styles.statusTxt}>Status : READY FOR TRANSACTION!!!</h1>
+					
+					<span id="caution" style={{display: 'none'}} className={styles.caution}> </span>
+
+					<h1 id="ftxt" style={{display: 'none'}} className={styles.faucetTxt}>Address Not Valid or No Balance!! Please check and fund on this link >>> </h1>
+					<a id="flink" style={{display: 'none'}} href={faucetLink} target="_blank" rel="noreferrer">
+					<h1 className={styles.faucetHere}>[[CLICK HERE]]</h1>
+					</a>
 				{mainContent}
+				{accountDoesNotExist}
 			</div>
+			
+
 		</main>
 
 	  <footer className={styles.footer}>

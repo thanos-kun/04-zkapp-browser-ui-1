@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   
 }
 
@@ -138,7 +139,7 @@
 	background-image: url("../images/homepageImg.png");
 	background-repeat: no-repeat;
 	position: absolute;
-	width: 600px;
+	width: 608px;
 	height: 500px;
 }
 
@@ -162,8 +163,8 @@
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 320px;
-	top: 400px;
+	left: 380px;
+	top: 450px;
 }
 
 .connectBtn:active {
@@ -174,8 +175,8 @@
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 320px;
-	top: 400px;
+	left: 380px;
+	top: 450px;
 }
 
 .loadingBtn {
@@ -186,8 +187,67 @@
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 320px;
-	top: 400px;
+	left: 380px;
+	top: 450px;
+}
+
+.loading {
+	display: block;
+	background-image: url("../images/loading.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	left: 305px;
+	top: 50px;
+}
+
+.caution {
+	display: block;
+	background-image: url("../images/caution.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 180px;
+	height: 155px;
+	position: absolute;
+	left: 370px;
+	top: 120px;
+}
+
+
+.statusTxt {
+	display: block;
+	position: absolute;
+	left: 300px;
+	top: 300px;
+	color: white;
+	font-size: 12px;
+	text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+.faucetTxt {
+	display: block;
+	position: absolute;
+	left: 250px;
+	top: 390px;
+	color: white;
+	font-size: 12px;
+	text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.faucetHere {
+	display: block;
+	position: absolute;
+	left: 250px;
+	top: 410px;
+	color: white;
+	font-size: 12px;
+	text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .sendBtn {
@@ -198,7 +258,7 @@
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 200px;
+	left: 250px;
 	top: 400px;
 }
 
@@ -210,7 +270,7 @@
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 200px;
+	left: 250px;
 	top: 400px;
 }
 
@@ -222,7 +282,7 @@
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 200px;
+	left: 250px;
 	top: 400px;
 }
 
@@ -234,7 +294,7 @@
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 450px;
+	left: 510px;
 	top: 400px;
 }
 
@@ -246,7 +306,7 @@
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 450px;
+	left: 510px;
 	top: 400px;
 }
 
@@ -258,17 +318,30 @@
 	width: 160px;
 	height: 73px;
 	position: absolute;
-	left: 450px;
+	left: 510px;
+	top: 400px;
+}
+
+.getBtnDisable {
+	display: block;
+	background-image: url("../images/getBtn3.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 160px;
+	height: 73px;
+	position: absolute;
+	left: 510px;
 	top: 400px;
 }
 
 .txtState {
 	display: block;
 	position: absolute;
-	left: 540px;
-	top: 100px;
+	left: 330px;
+	top: 210px;
 	color: white;
-	font-size: 13px;
+	font-size: 20px;
+	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
 }
@@ -276,12 +349,108 @@
 .numState {
 	display: block;
 	position: absolute;
-	left: 550px;
-	top: 110px;
+	left: 360px;
+	top: 200px;
 	color: white;
-	font-size: 40px;
+	font-size: 80px;
+	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
+}
+
+.txtAddrs {
+	display: block;
+	position: absolute;
+	left: 285px;
+	top: 350px;
+	color: white;
+	font-size: 12px;
+	text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+.addrs {
+	display: block;
+	position: absolute;
+	left: 220px;
+	top: 350px;
+	color: white;
+	font-size: 13px;
+	text-align: center;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+.getscreen{
+	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;	
+	width: 900px;
+	height: 600px;
+}
+
+.screenBlack {
+	display: block;
+	display: flex;
+	background-image: url("../images/black.png");
+	background-size: repeat;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 0.5;
+	-webkit-transform: scale(1.5);
+    transform: scale(1.5); /* you can change the value also */
+   -webkit-transform-origin: center;
+    transform-origin: center;
+}
+
+.getscreenImg {
+	display: block;
+	display: flex;
+	background-image: url("../images/screen.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 380px;
+	height: 280px;
+	position: absolute;
+	left: 260px;
+	top: 150px;
+
+}
+
+.closeBtn {
+	display: block;
+	background-image: url("../images/closeBtn1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 50px;
+	height: 52px;
+	position: absolute;
+	left: 590px;
+	top: 150px;
+}
+
+.closeBtn:hover {
+	display: block;
+	background-image: url("../images/closeBtn2.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 50px;
+	height: 52px;
+	position: absolute;
+	left: 590px;
+	top: 150px;
 }
 
 

@@ -21,14 +21,16 @@ a {
   body {
 	background-image: url("../images/bg.png");
 	font-family:Comic sans MS;
-	background-size: 100% 100%;
 	font-size: 27px;
-    color: black;
-	width: auto;
-	height: auto;
-	top: 0;
-	left: 0;
-	
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
 	
   }
 }
