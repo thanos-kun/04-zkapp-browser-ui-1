@@ -178,14 +178,38 @@ export default function App() {
 	console.log(connct);
 	};
 	
+  // -------------------------------------------------------
+  // Newwwwww
+  const connectBtnclick = () => {
+    const el = document.getElementById("loadingBtn")!
+	el.style.display = "block";
+	
+	const el2 = document.getElementById("connectBtn")!
+	el2.style.display = "none";
+  };
+  
+  const hideloadingBtn = () => {
+    const el = document.getElementById("loadingBtn")!
+	el.style.display = "none";
+  };
+  // -------------------------------------------------------
+  
   let mainContent;
   if (state.hasBeenSetup && state.accountExists) {	
-    mainContent = <div>
+    mainContent =
+		<div>
+			<a id="sendBtn" style={{display: 'block'}} onClick={() => {onSendTransaction(); }}>
+					<span className={styles.sendBtn}> </span>
+			</a>
+			
+			<a id="getBtn" style={{display: 'block'}} onClick={() => {onRefreshCurrentNum(); }}>
+					<span className={styles.getBtn}> </span>
+			</a>
       <button onClick={onSendTransaction} disabled={state.creatingTransaction}> Send Transaction </button>
       <div> Current Number in zkApp: { state.currentNum!.toString() } </div>
       <button onClick={onRefreshCurrentNum}> Get Latest State </button>
     </div>
-	hideconnect();
+	hideloadingBtn();
   }
   
   let nextContent;
@@ -194,9 +218,16 @@ export default function App() {
     nextContent = <div id="text1" style={{display: 'none'}}> Could not find a wallet. Install Auro wallet here: { auroLinkElem }</div> 
 		
   const handleClick = () => {
-    const el = document.getElementById("setup")!
-	el.style.display = "block";
-    console.log(el);
+    const el = document.getElementById("homepage")!
+	el.style.display = "none";
+	const el2 = document.getElementById("loading")!
+	el2.style.display = "block";
+	
+  };
+   
+  const loadingClick = () => {
+    const el = document.getElementById("loading")!
+	el.style.display = "none";
 	
   };
 	
@@ -205,31 +236,32 @@ export default function App() {
 	  <Head>
         <title>zkApp [mbukhori]</title>
         <meta name="description" content="ZkApp By mbukhori" />
-        <link type="image/png" crossOrigin="anonymous" sizes="32x32" rel="icon" href="https://raw.githubusercontent.com/mbukhori/04-zkapp-browser-ui/gh-pages/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="" />
 	  </Head>
 	  
 		<main className={styles.main}>
 		
-	  
-		{setup}
-		{ accountDoesNotExist }
-		{ mainContent }
-		<button id="connectbtn" style={{display: 'block'}} onClick={() => { handleClick(); connectWallet();}}>Connect Wallet</button>
-		
+			<div id="homepageImg" >
+				<span className={styles.homepageImg}> </span>
+				<a id="connectBtn" style={{display: 'block'}} onClick={() => {connectBtnclick(); connectWallet();}}>
+					<span className={styles.connectBtn}> </span>
+				</a>
 
+				<a id="loadingBtn" style={{display: 'none'}} onClick={() => {}}>
+					<span className={styles.loadingBtn}> </span>
+				</a>
+				
+				{mainContent}
+				
+				
+			</div>
+		
 		</main>
 		
 	  <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
           Powered by{' '}
           <span className={styles.logo}>
-            <Image crossOrigin="anonymous" src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
-        </a>
       </footer>
 	</div>
 	

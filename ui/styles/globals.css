@@ -21,12 +21,12 @@ a {
   body {
 	background-image: url("../images/bg.png");
 	font-family:Comic sans MS;
-	font-size: 30px;
+	font-size: 27px;
     color: black;
 	position: relative; 
 	background-size: cover;
-	height: 400px;
-	width: 100%;
+	height: auto;
+	width: auto;
   }
 }
 
