@@ -4,7 +4,7 @@ body {
 	margin: 0;
 	background-image: url("../images/bg.png");
 	background-repeat: no-repeat;
-	font-family:Comic sans MS;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
 	font-size: 27px;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;

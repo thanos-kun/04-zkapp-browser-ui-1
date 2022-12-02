@@ -26,7 +26,17 @@
   
 }
 
-
+.footerbg {
+	display: block;
+	background-image: url("../images/footer.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 520px;
+	height: 145px;
+	position: absolute;
+	left: 200px;
+	top: 560px;
+}
 
 .title a {
   color: #0070f3;
@@ -126,6 +136,7 @@
 	position: relative;	
 	width: 900px;
 	height: 600px;
+	transform: scale(1);
 }
 
 .homepageImg {
@@ -698,6 +709,42 @@
 	position: absolute;
 	left: 600px;
 	top: 120px;
+}
+
+.teleIcon {
+	display: block;
+	background-image: url("../images/teleicon1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 90px;
+	height: 70px;
+	position: absolute;
+	left: 330px;
+	top: 600px;
+}
+
+.dcIcon {
+	display: block;
+	background-image: url("../images/dcicon1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 90px;
+	height: 70px;
+	position: absolute;
+	left: 430px;
+	top: 600px;
+}
+
+.gitIcon {
+	display: block;
+	background-image: url("../images/giticon1.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 90px;
+	height: 70px;
+	position: absolute;
+	left: 530px;
+	top: 600px;
 }
 
 
