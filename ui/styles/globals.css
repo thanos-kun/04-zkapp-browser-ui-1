@@ -31,6 +31,7 @@ a {
 	left: 0px;
 	top: 0px;
 	position: absolute;
+	background-repeat: repeat-y;
 	
   }
 }

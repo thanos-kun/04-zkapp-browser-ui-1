@@ -155,6 +155,18 @@
 	top: 150px;
 }
 
+.banner2 {
+	display: block;
+	background-image: url("../images/banner2.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 250px;
+	height: 70px;
+	position: absolute;
+	left: 335px;
+	top: 310px;
+}
+
 .connectBtn {
 	display: block;
 	background-image: url("../images/connectBtn1.png");
@@ -293,7 +305,7 @@
 	left: 300px;
 	top: 300px;
 	color: white;
-	font-size: 12px;
+	font-size: 15px;
 	text-align: center;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
